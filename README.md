@@ -2,6 +2,8 @@
 
 **S-y-N-t-a-X** is an open-source, Python-based AI-powered Terminal CLI application inspired by Claude Code and Gemini CLI. It's designed to deeply understand and manipulate codebases, integrate with multiple LLM providers, and support agentic workflows for software development.
 
+> **Getting Started:** After installation, simply run `syntax` to launch the interactive CLI!
+
 ## 🚀 Features
 
 ### Core Capabilities
@@ -200,7 +202,7 @@ syntax config usage
 
 ```bash
 # Start interactive session
-syntax interactive
+syntax
 ```
 
 Interactive commands:
@@ -246,26 +248,33 @@ syntax debug --since "1 week ago"
 ```
 ai_cli/
 ├── main.py              # CLI entry point and command routing
-├── config/              # Configuration management
-│   ├── settings.py      # Pydantic settings models
-│   └── database.py      # Encrypted storage
-├── memory/              # Vector storage and context
-│   └── vector_store.py  # ChromaDB integration
+├── agents/              # AI agents with LangGraph workflows
+│   ├── autonomous_agent.py # ✅ Advanced autonomous agent with task planning
+│   ├── code_generator.py   # ✅ Code generation workflows
+│   ├── debugger.py         # ✅ Debugging and fixing workflows
+│   ├── navigator.py        # ✅ Code navigation and search
+│   └── reviewer.py         # ✅ Code review and analysis
 ├── llms/                # LLM provider management
-│   ├── manager.py       # Unified LLM interface
-│   ├── openai_client.py # OpenAI integration
-│   ├── anthropic_client.py # Anthropic integration
-│   ├── groq_client.py   # Groq integration
-│   └── ollama_client.py # Ollama integration
-├── agents/              # AI agents with LangGraph
-│   ├── code_generator.py # Code generation workflows
-│   ├── debugger.py      # Debugging and fixing
-│   ├── navigator.py     # Code navigation and search
-│   └── reviewer.py      # Code review and analysis
-└── tools/               # Utility tools
-    ├── file_operations.py # File system operations
-    ├── git_integration.py # Git repository management
-    └── code_analysis.py   # Code parsing and analysis
+│   ├── manager.py          # ✅ Unified LLM interface with provider selection
+│   ├── base.py             # ✅ Base LLM client interface
+│   ├── openai_client.py    # ✅ OpenAI GPT integration
+│   ├── anthropic_client.py # ✅ Anthropic Claude integration
+│   ├── gemini_client.py    # ✅ Google Gemini integration
+│   ├── groq_client.py      # ✅ Groq integration
+│   └── ollama_client.py    # ✅ Ollama local models integration
+├── ui/                  # User interface components
+│   ├── interactive.py      # ✅ Rich terminal interactive interface
+│   ├── llm_config.py       # ✅ LLM provider configuration UI
+│   └── demo.py             # ✅ Demo interface
+├── config/              # Configuration management
+│   ├── settings.py         # ✅ Pydantic settings models
+│   └── database.py         # ✅ Encrypted storage
+├── memory/              # Vector storage and context
+│   └── vector_store.py     # ✅ ChromaDB integration
+├── tools/               # Utility tools
+│   ├── file_operations.py  # ✅ File system operations
+│   ├── git_integration.py  # ✅ Git repository management
+│   └── code_analysis.py    # ✅ Code parsing and analysis
 ```
 
 ### Agent Workflows
@@ -431,284 +440,10 @@ syntax debug "Payment processor returns 500 error intermittently"
 - ✅ Configuration system
 - ✅ Vector memory storage
 
-### Upcoming Features (1.1.0)
-- 🔄 Plugin system for custom agents
-- 🔄 Web interface for visual code exploration
-- 🔄 Integration with popular IDEs
-- 🔄 Advanced code metrics and analytics
-- 🔄 Team collaboration features
-
-### Future Vision (2.0.0)
-- 🎯 Multi-language support beyond Python
-- 🎯 Cloud deployment options
-- 🎯 Enterprise features and SSO
-- 🎯 Advanced AI model fine-tuning
-- 🎯 Integration with CI/CD pipelines
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- Inspired by Claude Code and Gemini CLI
-- Built with LangChain and LangGraph
-- Uses ChromaDB for vector storage
-- Thanks to the open-source community
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/S-y-N-t-a-X/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/S-y-N-t-a-X/discussions)
-- **Email**: support@syntax-cli.dev
-
 ---
 
-**S-y-N-t-a-X** - Empowering developers with AI-driven code intelligence.: AI-Powered Terminal CLI
-
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![PyPI version](https://badge.fury.io/py/syntax-ai-cli.svg)](https://badge.fury.io/py/syntax-ai-cli)
-
-An open-source, Python-based AI-powered Terminal CLI application inspired by Claude Code and Gemini CLI, designed to deeply understand and manipulate codebases, integrate with multiple LLM providers, and support agentic workflows.
-
-## 🎯 Core Capabilities
-
-- **Build new features** from natural language descriptions
-- **Debug and fix issues** from code and error traces
-- **Navigate and search** large codebases contextually
-- **Automate repetitive** and tedious development tasks
-- **Support for both one-shot and multi-step** agentic workflows
-
-## 🧠 Agentic Intelligence
-
-- Uses LangChain and LangGraph to define modular and coordinated multi-step agents
-- Understands high-level developer intent and translates into actionable code changes
-- Uses agentic search and reasoning to coordinate across multiple files
-- Never modifies files without explicit user approval
-
-## 🌐 Supported LLM Providers
-
-- **Claude** (Opus 4, Sonnet 4, Haiku 3.5)
-- **OpenAI** (GPT-4, GPT-4o, GPT-3.5)
-- **Groq** (ultra-fast LLaMA/Mixtral)
-- **Ollama** (local models like LLaMA2, Mistral, CodeLlama)
-- **OpenRouter** (multi-provider API access)
-- **Grok** (xAI support)
-
-## 🚀 Quick Start
-
-### Installation
-
-```bash
-pip install syntax-ai-cli
-```
-
-### Basic Usage
-
-```bash
-# Interactive mode
-syntax
-
-# Generate a new feature
-syntax generate-feature "Add user authentication with JWT tokens"
-
-# Debug a file
-syntax debug src/auth.py
-
-# Search codebase
-syntax search "authentication logic"
-
-# Navigate to symbol
-syntax navigate UserController
-
-# Edit with natural language
-syntax edit "Add error handling to the login function"
-
-# Code review
-syntax review
-```
-
-### Configuration
-
-```bash
-# Set up API keys
-syntax config set-key openai sk-...
-syntax config set-key anthropic sk-ant-...
-syntax config set-key groq gsk_...
-
-# Configure preferences
-syntax config set model claude-3-sonnet
-syntax config set interactive true
-```
-
-## 🧰 Core Commands
-
-| Command | Description | Example |
-|---------|-------------|---------|
-| `generate-feature` | Build new features from description | `syntax generate-feature "REST API endpoint"` |
-| `debug` | Debug files or error traces | `syntax debug app.py` |
-| `navigate` | Find and jump to code symbols | `syntax navigate UserClass` |
-| `search` | Semantic or keyword search | `syntax search "database connection"` |
-| `edit` | Interactive code modifications | `syntax edit "refactor this function"` |
-| `review` | AI-powered code review | `syntax review --files src/` |
-| `config` | Manage settings and API keys | `syntax config list` |
-
-## 🏗️ Project Structure
-
-```
-ai_cli/
-├── main.py              # CLI entry point
-├── agents/              # LangGraph agent definitions
-│   ├── code_generator.py
-│   ├── debugger.py
-│   ├── navigator.py
-│   └── reviewer.py
-├── tools/               # Agent tools and utilities
-│   ├── file_operations.py
-│   ├── code_analysis.py
-│   ├── git_integration.py
-│   └── test_runner.py
-├── llms/               # LLM provider integrations
-│   ├── openai_client.py
-│   ├── anthropic_client.py
-│   ├── groq_client.py
-│   └── ollama_client.py
-├── config/             # Configuration management
-│   ├── settings.py
-│   └── database.py
-├── db/                 # SQLite database models
-│   └── models.py
-└── memory/             # ChromaDB vector storage
-    └── vector_store.py
-```
-
-## ⚙️ Configuration
-
-### Global Configuration (`~/.syntax/config.toml`)
-
-```toml
-[general]
-default_model = "claude-3-sonnet"
-interactive_mode = true
-auto_save = true
-max_context_length = 8000
-
-[providers]
-preferred_order = ["anthropic", "openai", "groq", "ollama"]
-
-[memory]
-enable_vector_store = true
-max_history_items = 1000
-```
-
-### Project Configuration (`.syntax.toml`)
-
-```toml
-[project]
-name = "my-project"
-language = "python"
-framework = "fastapi"
-
-[prompts]
-system_prompt = "You are a Python FastAPI expert..."
-coding_style = "Follow PEP 8 and use type hints"
-
-[exclusions]
-ignore_patterns = ["*.pyc", "__pycache__", ".git", "node_modules"]
-```
-
-## 🧪 Advanced Features
-
-### Agentic Workflows
-
-```bash
-# Multi-step feature development
-syntax workflow create "user-auth" \
-  --steps "design,implement,test,document" \
-  --review-each-step
-
-# Custom agent chains
-syntax agent-chain \
-  --agents "analyzer,planner,coder,tester" \
-  --goal "optimize database queries"
-```
-
-### Memory and Context
-
-```bash
-# Vector search across codebase
-syntax memory search "authentication patterns"
-
-# Context-aware suggestions
-syntax suggest --context "current file and imports"
-
-# Learning from interactions
-syntax memory learn --from-session
-```
-
-### IDE Integration
-
-```bash
-# VS Code extension
-syntax install vscode-extension
-
-# JetBrains plugin
-syntax install jetbrains-plugin
-
-# LSP server mode
-syntax lsp-server --port 8080
-```
-
-## 🔧 Development
-
-### Setup Development Environment
-
-```bash
-git clone https://github.com/MRMORNINGSTAR2233/S-y-N-t-a-X.git
-cd S-y-N-t-a-X
-pip install -e ".[dev]"
-pre-commit install
-```
-
-### Running Tests
-
-```bash
-# Unit tests
-pytest tests/unit/
-
-# Integration tests
-pytest tests/integration/
-
-# All tests with coverage
-pytest --cov=ai_cli tests/
-```
-
-### Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Community
-
-- **GitHub Discussions**: [Community Forum](https://github.com/MRMORNINGSTAR2233/S-y-N-t-a-X/discussions)
-- **Issues**: [Bug Reports & Feature Requests](https://github.com/MRMORNINGSTAR2233/S-y-N-t-a-X/issues)
-- **Wiki**: [Documentation](https://github.com/MRMORNINGSTAR2233/S-y-N-t-a-X/wiki)
-
-## 🙏 Acknowledgments
-
-- Inspired by Claude Code and Gemini CLI
-- Built with LangChain and LangGraph
-- Powered by multiple LLM providers
-- Community-driven development
-
----
-
-**Made with ❤️ by the S-y-N-t-a-X team**
+**S-y-N-t-a-X** - Empowering developers with AI-driven code intelligence.
