@@ -1,0 +1,6 @@
+[console_scripts]
+ai-cli = ai_cli.main:cli
+syntax = ai_cli.main:cli
+syntax-cli = ai_cli.main:cli
+syntax-demo = ai_cli.ui.demo:main
+syntax-ui = ai_cli.ui.interactive:main

@@ -73,9 +73,10 @@ dev = [
 
 [project.scripts]
 syntax = "ai_cli.main:cli"
-ai-cli = "ai_cli.main:cli"
+syntax-cli = "ai_cli.main:cli"
 syntax-ui = "ai_cli.ui.interactive:main"
 syntax-demo = "ai_cli.ui.demo:main"
+ai-cli = "ai_cli.main:cli"
 
 [project.urls]
 Homepage = "https://github.com/MRMORNINGSTAR2233/S-y-N-t-a-X"
