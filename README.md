@@ -384,8 +384,6 @@ mypy ai_cli/
 ```
 
 ### Code Style
-- Follow PEP 8 guidelines
-- Use Black for code formatting
 - Add type hints for all functions
 - Write comprehensive docstrings
 - Include unit tests for new features
