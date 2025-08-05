@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="banner.png" alt="S-y-N-t-a-X Logo" width="600"/>
+</div>
+
 # S-y-N-t-a-X: AI-Powered Terminal CLI
 
 **S-y-N-t-a-X** is an open-source, Python-based AI-powered Terminal CLI application inspired by Claude Code and Gemini CLI. It's designed to deeply understand and manipulate codebases, integrate with multiple LLM providers, and support agentic workflows for software development.
